@@ -6,8 +6,10 @@ procedure TForm1.DBGrid1DrawColumnCell(Sender: TObject; const Rect: TRect;
  DataCol: Integer; Column: TColumn; State: TGridDrawState);
 begin
   if Table1.FieldByName('Salary').AsCurrency>36000 then
-    DBGrid1.Canvas.Brush.Color:=clWhite;
-    
+  begin
+    DBGrid1.Canvas.Font.Color:= clRed;
+    DBGrid1.Canvas.Font.Style:= [fsBold];
+  end;    
   DBGrid1.DefaultDrawColumnCell(Rect, DataCol, Column, State);
 end;
 
